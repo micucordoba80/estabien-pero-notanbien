@@ -18,11 +18,11 @@ class Level2Scene extends Phaser.Scene {
         this.lockText.setPosition(100, 80).setVisible(false);
         this.add.text(100, 100, 'TU JAULA', { fontSize: '11px', fill: '#ffd700', fontFamily: GAME.FONT }).setOrigin(0.5).setDepth(20);
 
-        [{x:150,y:350},{x:250,y:150},{x:400,y:450},{x:550,y:150},{x:700,y:350}].forEach(p => {
+        [{x:120,y:400},{x:250,y:150},{x:400,y:500},{x:550,y:150},{x:700,y:400}].forEach(p => {
             const c = this.cages.create(p.x, p.y, 'cage'); c.setData('filled', false); c.refreshBody();
         });
 
-        [{x:80,y:450},{x:250,y:250},{x:400,y:450},{x:550,y:250},{x:720,y:450}].forEach(p => {
+        [{x:80,y:450},{x:250,y:250},{x:400,y:350},{x:550,y:250},{x:720,y:450}].forEach(p => {
             const n = this.npcs.create(p.x, p.y, 'npc');
             n.setData('saved', false).setData('eaten', false);
             n.setCollideWorldBounds(true); n.body.setDrag(500);
