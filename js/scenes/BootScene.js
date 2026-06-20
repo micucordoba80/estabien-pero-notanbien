@@ -55,6 +55,10 @@ class BootScene extends Phaser.Scene {
         g.generateTexture('playercage', 36, 36);
         g.clear();
 
+        g.fillStyle(0xffd700); g.fillCircle(6, 10, 6); g.fillRect(10, 8, 14, 4); g.fillRect(20, 4, 4, 12);
+        g.generateTexture('key', 26, 18);
+        g.clear();
+
         g.destroy();
         this.scene.start('Menu');
     }

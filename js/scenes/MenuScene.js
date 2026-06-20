@@ -17,8 +17,9 @@ class MenuScene extends Phaser.Scene {
         btn.on('pointerdown', () => this.scene.start('Level1', { score: 0, lives: GAME.START_LIVES, savedCount: 0 }));
 
         this.add.text(400, 430, 'Controles: FLECHAS para moverte', { fontSize: '14px', fill: '#ccc' }).setOrigin(0.5);
-        this.add.text(400, 450, 'FASE 1: Meté a todas las personas en las jaulas ⏱️', { fontSize: '14px', fill: '#ccc' }).setOrigin(0.5);
-        this.add.text(400, 470, 'FASE 2: Cuando lleguen los lobos, CORRÉ a tu jaula 🏃💨', { fontSize: '14px', fill: '#ccc' }).setOrigin(0.5);
+        this.add.text(400, 450, 'FASE 1: Meté a todos en las jaulas antes del tiempo ⏱️', { fontSize: '14px', fill: '#ccc' }).setOrigin(0.5);
+        this.add.text(400, 470, 'FASE 2: Buscá la 🗝️ que aparece, abrí tu jaula y escapá!', { fontSize: '14px', fill: '#ccc' }).setOrigin(0.5);
+        this.add.text(400, 490, '🐺 Los lobos te persiguen... ¡no te dejes atrapar!', { fontSize: '14px', fill: '#ff6666' }).setOrigin(0.5);
 
         const wolf = this.add.image(150, 350, 'wolf').setScale(2);
         this.tweens.add({ targets: wolf, x: 650, duration: 4000, yoyo: true, repeat: -1 });

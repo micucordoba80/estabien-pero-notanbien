@@ -13,6 +13,7 @@ class Level3Scene extends Phaser.Scene {
         this.add.text(400, 75, '⛰️ NIVEL 3 - LA MONTAÑA ⛰️', { fontSize: '22px', fill: '#fff', backgroundColor: '#0008', padding: { x: 16, y: 6 } }).setOrigin(0.5).setDepth(20);
 
         this.playercage.setPosition(400, 500).setVisible(true).refreshBody();
+        this.lockText.setPosition(400, 460).setVisible(false);
         this.add.text(400, 478, '🏠 TU JAULA', { fontSize: '12px', fill: '#ffd700' }).setOrigin(0.5).setDepth(20);
         this.player.setPosition(400, 80);
 
