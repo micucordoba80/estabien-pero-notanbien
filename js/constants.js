@@ -1,4 +1,4 @@
-const GAME = { W: 800, H: 600, START_LIVES: 3, PUSH_FORCE: 280, INVINCIBLE_MS: 1200, FONT: '"Press Start 2P", monospace' };
+const GAME = { W: 800, H: 600, START_LIVES: 3, PUSH_FORCE: 280, INVINCIBLE_MS: 1200, FONT: 'Arial, sans-serif' };
 const LV = {
     woodlands: { npcs: 3, wolves: 1, wolfSpeed: 120, cages: 3, timer: 30, hasBoss: false },
     forest:    { npcs: 5, wolves: 2, wolfSpeed: 140, cages: 5, timer: 60, hasBoss: false },
