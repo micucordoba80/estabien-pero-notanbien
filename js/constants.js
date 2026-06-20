@@ -1,8 +1,8 @@
 const GAME = { W: 800, H: 600, START_LIVES: 3, PUSH_FORCE: 280, INVINCIBLE_MS: 1200, FONT: 'Arial, sans-serif' };
 const LV = {
     woodlands: { npcs: 3, wolves: 1, wolfSpeed: 120, cages: 3, timer: 30, hasBoss: false },
-    forest:    { npcs: 5, wolves: 2, wolfSpeed: 140, cages: 5, timer: 60, hasBoss: false },
-    mountain:  { npcs: 6, wolves: 3, wolfSpeed: 160, cages: 6, timer: 80, hasBoss: true }
+    forest:    { npcs: 5, wolves: 2, wolfSpeed: 140, cages: 5, timer: 35, hasBoss: false },
+    mountain:  { npcs: 6, wolves: 3, wolfSpeed: 160, cages: 6, timer: 40, hasBoss: true }
 };
 
 function getNearest(target, group, excludeSaved) {
