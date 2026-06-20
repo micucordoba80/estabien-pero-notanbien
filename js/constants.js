@@ -96,7 +96,7 @@ function sharedUpdate(scene, delta) {
             }
             scene.gamePhase = 'escape';
             scene.phaseText.setText('🐺 ¡Llegaron los lobos! Agarrá la llave y escapá!');
-            scene.timerText.setText('🐺 ¡HUYE!').setColor('#ff0000');
+            scene.timerText.setText('🐺 ¡CORRE!').setColor('#ff0000');
             scene.cameras.main.flash(400, 255, 0, 0);
             spawnWolves(scene);
             if (!scene.keySpawned) spawnKey(scene);

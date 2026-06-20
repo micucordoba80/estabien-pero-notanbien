@@ -5,8 +5,8 @@ class MenuScene extends Phaser.Scene {
         const f = GAME.FONT;
         this.add.image(400, 300, 'bg_woodlands').setDisplaySize(GAME.W, GAME.H);
 
-        this.add.text(400, 120, 'ESTÁ BIEN,', { fontSize: '44px', fill: '#ffd700', fontFamily: f }).setOrigin(0.5);
-        this.add.text(400, 170, 'PERO NO TAN BIEN', { fontSize: '32px', fill: '#ff6600', fontFamily: f }).setOrigin(0.5);
+        this.add.text(400, 120, '¡CUIDADO CON ', { fontSize: '32px', fill: '#dbabab', fontFamily: f }).setOrigin(0.5);
+        this.add.text(400, 170, 'LOS LOBOS!', { fontSize: '44px', fill: '#da0000', fontFamily: f }).setOrigin(0.5);
         this.add.text(400, 220, 'Atrapa personas en jaulas para salvarlas de los lobos', { fontSize: '12px', fill: '#fff', fontFamily: f }).setOrigin(0.5);
         this.add.text(400, 245, 'Está bien porque las salvas... pero no tan bien porque las encierras', { fontSize: '10px', fill: '#aaa', fontFamily: f }).setOrigin(0.5);
 
