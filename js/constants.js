@@ -192,14 +192,14 @@ function onCollectKey(player, key) {
 }
 
 function onPlayerReachCage(player, cage) {
-    if (this.gamePhase !== 'escape' || this.gameOver) return;
+    if (this.gameOver) return;
     if (!this.keyCollected) {
         showFloatingText(this, player.x, player.y - 30, '🔒 ¡Necesitás la llave!', '#ff4444');
         return;
     }
+    if (this.gamePhase === 'escape') this.wolves.children.iterate(w => { if (w && w.active) w.body.setVelocity(0, 0); });
     this.gameOver = true;
     this.player.body.setVelocity(0, 0);
-    this.wolves.children.iterate(w => { if (w && w.active) w.body.setVelocity(0, 0); });
     this.cameras.main.fade(500, 0, 0, 0);
     this.time.delayedCall(600, () => this.scene.start(this.data.get('nextScene'), {
         score: this.score, lives: this.lives, savedCount: this.savedCount }));
