@@ -11,11 +11,11 @@ class Level3Scene extends Phaser.Scene {
 
     create() {
         sharedCreate(this, 'mountain');
-        this.add.text(400, 75, '⛰️ NIVEL 3 - LA MONTAÑA ⛰️', { fontSize: '22px', fill: '#fff', backgroundColor: '#0008', padding: { x: 16, y: 6 } }).setOrigin(0.5).setDepth(20);
+        this.add.text(400, 75, 'NIVEL 3 - LA MONTANA', { fontSize: '16px', fill: '#fff', fontFamily: GAME.FONT, backgroundColor: '#0008', padding: { x: 12, y: 6 } }).setOrigin(0.5).setDepth(20);
 
         this.playercage.setPosition(400, 500).setVisible(true).refreshBody();
         this.lockText.setPosition(400, 460).setVisible(false);
-        this.add.text(400, 478, '🏠 TU JAULA', { fontSize: '12px', fill: '#ffd700' }).setOrigin(0.5).setDepth(20);
+        this.add.text(400, 478, 'TU JAULA', { fontSize: '11px', fill: '#ffd700', fontFamily: GAME.FONT }).setOrigin(0.5).setDepth(20);
         this.player.setPosition(400, 80);
 
         [{x:80,y:150},{x:200,y:400},{x:350,y:150},{x:500,y:400},{x:650,y:150},{x:720,y:350}].forEach(p => {

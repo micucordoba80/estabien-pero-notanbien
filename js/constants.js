@@ -1,4 +1,4 @@
-const GAME = { W: 800, H: 600, START_LIVES: 3, PUSH_FORCE: 280, INVINCIBLE_MS: 1200 };
+const GAME = { W: 800, H: 600, START_LIVES: 3, PUSH_FORCE: 280, INVINCIBLE_MS: 1200, FONT: '"Press Start 2P", monospace' };
 const LV = {
     woodlands: { npcs: 3, wolves: 1, wolfSpeed: 120, cages: 3, timer: 30, hasBoss: false },
     forest:    { npcs: 5, wolves: 2, wolfSpeed: 140, cages: 5, timer: 60, hasBoss: false },
@@ -51,13 +51,14 @@ function sharedCreate(scene, levelKey) {
     scene.cursors = scene.input.keyboard.createCursorKeys();
     scene.spaceKey = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
-    const bi = { fontSize: '18px', fill: '#fff' };
-    scene.timerText = scene.add.text(360, 16, '', { fontSize: '28px', fill: '#fff' }).setDepth(20);
-    scene.phaseText = scene.add.text(400, 50, '', { fontSize: '16px', fill: '#ffd700', backgroundColor: '#0008', padding: { x: 10, y: 4 } }).setOrigin(0.5).setDepth(20);
+    const f = GAME.FONT;
+    const bi = { fontSize: '16px', fill: '#fff', fontFamily: f };
+    scene.timerText = scene.add.text(360, 16, '', { fontSize: '22px', fill: '#fff', fontFamily: f }).setDepth(20);
+    scene.phaseText = scene.add.text(400, 50, '', { fontSize: '14px', fill: '#ffd700', fontFamily: f, backgroundColor: '#0008', padding: { x: 10, y: 4 } }).setOrigin(0.5).setDepth(20);
     scene.scoreText = scene.add.text(16, 16, 'Puntos: ' + scene.score, bi).setDepth(20);
     scene.livesText = scene.add.text(16, 40, 'Vidas: ' + '❤️'.repeat(scene.lives), bi).setDepth(20);
     scene.npcText = scene.add.text(600, 16, 'Salvados: 0/' + cfg.npcs, bi).setDepth(20);
-    scene.infoText = scene.add.text(400, 570, '', { fontSize: '14px', fill: '#fff' }).setOrigin(0.5).setDepth(20);
+    scene.infoText = scene.add.text(400, 570, '', { fontSize: '12px', fill: '#fff', fontFamily: f }).setOrigin(0.5).setDepth(20);
 
     scene.physics.add.overlap(scene.player, scene.npcs, onPushNPC, null, scene);
     scene.physics.add.overlap(scene.npcs, scene.cages, onSaveNPC, null, scene);
@@ -138,7 +139,7 @@ function spawnWolves(scene) {
     if (cfg.hasBoss) {
         const b = scene.wolves.create(400, -30, 'boss').setData('isBoss', true);
         b.setCollideWorldBounds(true);
-        scene.add.text(400, 68, '🐺 ¡LOBO JEFE!', { fontSize: '14px', fill: '#ff4444', backgroundColor: '#0008', padding: { x: 8, y: 4 } }).setOrigin(0.5).setDepth(20);
+        scene.add.text(400, 68, 'LOBO JEFE', { fontSize: '12px', fill: '#ff4444', fontFamily: GAME.FONT, backgroundColor: '#0008', padding: { x: 8, y: 4 } }).setOrigin(0.5).setDepth(20);
     }
 }
 
@@ -208,6 +209,6 @@ function onPlayerReachCage(player, cage) {
 }
 
 function showFloatingText(s, x, y, msg, color) {
-    const t = s.add.text(x, y, msg, { fontSize: '18px', fill: color, fontStyle: 'bold' }).setOrigin(0.5).setDepth(25);
+    const t = s.add.text(x, y, msg, { fontSize: '16px', fill: color, fontFamily: GAME.FONT }).setOrigin(0.5).setDepth(25);
     s.tweens.add({ targets: t, y: y - 50, alpha: 0, duration: 800, onComplete: () => t.destroy() });
 }

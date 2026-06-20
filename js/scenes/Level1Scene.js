@@ -11,11 +11,11 @@ class Level1Scene extends Phaser.Scene {
 
     create() {
         sharedCreate(this, 'woodlands');
-        this.add.text(400, 75, '🌲 NIVEL 1 - EL BOSQUE 🌲', { fontSize: '22px', fill: '#fff', backgroundColor: '#0008', padding: { x: 16, y: 6 } }).setOrigin(0.5).setDepth(20);
+        this.add.text(400, 75, 'NIVEL 1 - EL BOSQUE', { fontSize: '16px', fill: '#fff', fontFamily: GAME.FONT, backgroundColor: '#0008', padding: { x: 12, y: 6 } }).setOrigin(0.5).setDepth(20);
 
         this.playercage.setPosition(700, 120).setVisible(true).refreshBody();
         this.lockText.setPosition(700, 80).setVisible(false);
-        this.add.text(700, 100, '🏠 TU JAULA', { fontSize: '12px', fill: '#ffd700' }).setOrigin(0.5).setDepth(20);
+        this.add.text(700, 100, 'TU JAULA', { fontSize: '11px', fill: '#ffd700', fontFamily: GAME.FONT }).setOrigin(0.5).setDepth(20);
 
         [{x:120,y:200},{x:400,y:150},{x:680,y:200}].forEach(p => {
             const c = this.cages.create(p.x, p.y, 'cage'); c.setData('filled', false); c.refreshBody();
