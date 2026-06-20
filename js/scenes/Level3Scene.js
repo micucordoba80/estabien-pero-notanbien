@@ -16,7 +16,7 @@ class Level3Scene extends Phaser.Scene {
         this.add.text(400, 478, '🏠 TU JAULA', { fontSize: '12px', fill: '#ffd700' }).setOrigin(0.5).setDepth(20);
         this.player.setPosition(400, 80);
 
-        [{x:80,y:150},{x:250,y:400},{x:400,y:200},{x:550,y:400},{x:720,y:150}].forEach(p => {
+        [{x:80,y:150},{x:200,y:400},{x:350,y:150},{x:500,y:400},{x:650,y:150},{x:720,y:350}].forEach(p => {
             const c = this.cages.create(p.x, p.y, 'cage'); c.setData('filled', false); c.refreshBody();
         });
 

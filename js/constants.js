@@ -5,8 +5,8 @@ const GAME = {
 
 const LV = {
     woodlands: { npcs: 3, wolves: 1, wolfSpeed: 120, cages: 3, timer: 30, hasBoss: false },
-    forest:    { npcs: 5, wolves: 2, wolfSpeed: 140, cages: 4, timer: 25, hasBoss: false },
-    mountain:  { npcs: 6, wolves: 3, wolfSpeed: 160, cages: 5, timer: 20, hasBoss: true }
+    forest:    { npcs: 5, wolves: 2, wolfSpeed: 140, cages: 5, timer: 60, hasBoss: false },
+    mountain:  { npcs: 6, wolves: 3, wolfSpeed: 160, cages: 6, timer: 80, hasBoss: true }
 };
 
 function getNearest(target, group, excludeSaved) {
