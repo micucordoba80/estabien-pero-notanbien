@@ -43,8 +43,16 @@ class BootScene extends Phaser.Scene {
         g.generateTexture('bg_mountain', 16, 16);
         g.clear();
 
-        g.fillStyle(0xf39c12); g.fillRect(0, 0, 10, 10);
+        g.fillStyle(0xffd700); g.fillRect(0, 0, 10, 10);
         g.generateTexture('coin', 10, 10);
+        g.clear();
+
+        g.lineStyle(4, 0xffd700); g.strokeRect(0, 0, 36, 36);
+        g.lineStyle(2, 0xffaa00); g.strokeRect(2, 2, 32, 32);
+        g.lineBetween(0, 12, 36, 12); g.lineBetween(0, 24, 36, 24);
+        g.lineBetween(18, 0, 18, 36);
+        g.fillStyle(0xffd700, 0.15); g.fillRect(0, 0, 36, 36);
+        g.generateTexture('playercage', 36, 36);
         g.clear();
 
         g.destroy();

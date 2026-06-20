@@ -6,7 +6,7 @@
 
 ## 📖 Descripción
 
-Un videojuego 2D desarrollado con Phaser.js donde controlás a un personaje que debe **meter personas en jaulas** para salvarlas de los lobos.
+Un videojuego 2D desarrollado con Phaser.js donde tenés que **meter personas en jaulas** para salvarlas de los lobos... y después escapar vos también.
 
 **El concepto:** *"Está bien porque las salvas de los lobos... pero no tan bien porque las encerrás en jaulas"*
 
@@ -15,58 +15,57 @@ Un videojuego 2D desarrollado con Phaser.js donde controlás a un personaje que 
 ## 🎮 Controles
 
 - **FLECHAS** (← → ↑ ↓) — Movimiento del personaje
-- **ESPACIO** — Avanzar al siguiente nivel
 
 ---
 
 ## 🎯 Objetivo del juego
 
-Salvar la cantidad mínima de personas en cada nivel empujándolas hacia las jaulas antes de que los lobos las atrapen.
+**FASE 1 — Preparación ⏱️**
+Tenés un tiempo límite para meter a todas las personas en las jaulas empujándolas.
+
+**FASE 2 — Escape 🏃💨**
+Cuando se acaba el tiempo, aparecen los lobos. Si dejaste a alguien afuera, perdés.
+Si todas las personas están a salvo en sus jaulas, los lobos te persiguen a VOS.
+Tenés que llegar a **tu jaula dorada** 🏠 antes que te atrapen.
 
 ---
 
 ## ⚙️ Mecánicas principales
 
-- **Empujar NPCs:** Al chocar con una persona, la empujás en la dirección contraria. Tenés que llevarla hasta una jaula.
-- **Jaulas:** Son zonas seguras. Si una persona llega a una jaula, queda salvada.
-- **Lobos:** Persiguen a las personas automáticamente. Si alcanzan a una persona antes de que llegue a la jaula, la pierdes.
-- **Señales de advertencia:** Cuando un lobo está cerca de una persona, aparece un círculo rojo en el suelo indicando el peligro.
+- **Empujar NPCs:** Al chocar con una persona, la empujás. Tenés que llevarla hasta una jaula.
+- **Jaulas:** Zonas seguras para las personas. Una vez adentro, quedan salvadas.
+- **Tu jaula dorada:** Al final de cada nivel, tenés que llegar a esta jaula para escapar de los lobos.
+- **Timer:** Contador regresivo. Cuando llega a 0, los lobos aparecen.
+- **Lobos:** Persiguen al jugador en la fase de escape. Si te tocan, perdés una vida.
 
 ---
 
 ## 🏞️ Niveles
 
 ### Nivel 1 - El Bosque 🌲
-- 3 personas en peligro, 1 lobo
-- Objetivo: salvar al menos 2 personas
-- Introducción a la mecánica principal
+- ⏱️ 30 segundos | 👥 3 personas | 🐺 1 lobo
+- Introducción a la mecánica
 
 ### Nivel 2 - Bosque Denso 🌳
-- 5 personas en peligro, 2 lobos
-- Objetivo: salvar al menos 3 personas
-- Mayor dificultad, más lobos y personas distribuidas
+- ⏱️ 25 segundos | 👥 5 personas | 🐺 2 lobos
+- Más personas que salvar en menos tiempo
 
 ### Nivel 3 - La Montaña ⛰️
-- 6 personas en peligro, 3 lobos + LOBO JEFE
-- Objetivo: salvar al menos 4 personas
-- El **Lobo Jefe** (rojo) persigue al jugador directamente y te saca vidas
+- ⏱️ 20 segundos | 👥 6 personas | 🐺 3 lobos + LOBO JEFE
+- El **Lobo Jefe** (rojo) es más rápido y peligroso
 
 ---
 
 ## ⭐ Puntos
 
-**Suma puntos:**
-- Salvar una persona en una jaula: +100 puntos
-
-**Resta puntos:**
-- *(No implementado en esta versión)*
+- Salvar una persona en una jaula: **+100 puntos**
 
 ---
 
 ## ❤️ Vidas
 
 - Comenzás con 3 vidas
-- Si un lobo te toca, perdés una vida
+- Si un lobo te toca en la fase de escape, perdés una vida
 - Al quedarte sin vidas → **Game Over**
 - Entre niveles se mantienen las vidas y los puntos
 
@@ -74,15 +73,15 @@ Salvar la cantidad mínima de personas en cada nivel empujándolas hacia las jau
 
 ## 🧍 NPCs
 
-- **Personas (Naranja):** Están en peligro. Hay que empujarlas a las jaulas.
-- **Lobos (Gris):** Persiguen a las personas automáticamente.
-- **Lobo Jefe (Rojo, Nivel 3):** Persigue al jugador y le saca vidas al contacto.
+- **Personas (Naranja):** Hay que empujarlas a las jaulas antes que se acabe el tiempo
+- **Lobos (Gris):** Aparecen cuando el timer llega a 0 y persiguen al jugador
+- **Lobo Jefe (Rojo, Nivel 3):** Más rápido, persigue al jugador directamente
 
 ---
 
 ## 🔗 Link al juego publicado
 
-*[Agregar link de GitHub Pages cuando esté publicado]*
+[https://micucordoba80.github.io/estabien-pero-notanbien/](https://micucordoba80.github.io/estabien-pero-notanbien/)
 
 ---
 
