@@ -3,7 +3,7 @@ class GameOverScene extends Phaser.Scene {
 
     init(data) {
         this.finalScore = data.score || 0;
-        this.savedCount = data.savedCount || 0;
+        this.savedCount = data.totalSaved || 0;
         this.level = data.level || '';
     }
 

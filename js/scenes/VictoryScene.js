@@ -4,7 +4,7 @@ class VictoryScene extends Phaser.Scene {
     init(data) {
         this.finalScore = data.score || 0;
         this.livesLeft = data.lives || 0;
-        this.savedCount = data.savedCount || 0;
+        this.savedCount = data.totalSaved || 0;
     }
 
     create() {

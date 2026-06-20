@@ -19,7 +19,8 @@ function sharedCreate(scene, levelKey) {
     const cfg = LV[levelKey];
     scene.score = scene.data.get('score') || 0;
     scene.lives = scene.data.get('lives') || GAME.START_LIVES;
-    scene.savedCount = scene.data.get('savedCount') || 0;
+    scene.savedCount = 0;
+    scene.totalSaved = scene.data.get('totalSaved') || 0;
     scene.wolfSpeed = cfg.wolfSpeed;
     scene.totalNpcs = cfg.npcs;
     scene.timerStart = cfg.timer;
@@ -89,7 +90,7 @@ function sharedUpdate(scene, delta) {
             if (unsaved.length > 0) {
                 scene.gameOver = true;
                 scene.phaseText.setText('💀 ¡Se acabó el tiempo! Alguien quedó afuera');
-                scene.time.delayedCall(800, () => scene.scene.start('GameOver', { score: scene.score, savedCount: scene.savedCount, level: scene.levelKey }));
+                scene.time.delayedCall(800, () => scene.scene.start('GameOver', { score: scene.score, level: scene.levelKey, totalSaved: scene.totalSaved }));
                 return;
             }
             scene.gamePhase = 'escape';
@@ -154,6 +155,7 @@ function onSaveNPC(npc, cage) {
     cage.setData('filled', true);
     this.score += 100;
     this.savedCount++;
+    this.totalSaved++;
     npc.setTint(0x00ff00);
     npc.body.setVelocity(0, 0);
     npc.body.enable = false;
@@ -177,7 +179,7 @@ function onWolfHit(wolf, player) {
     if (this.lives <= 0) {
         this.gameOver = true;
         this.time.delayedCall(500, () => this.scene.start('GameOver', {
-            score: this.score, savedCount: this.savedCount, level: this.levelKey }));
+            score: this.score, level: this.levelKey, totalSaved: this.totalSaved }));
     }
 }
 
@@ -202,7 +204,7 @@ function onPlayerReachCage(player, cage) {
     this.player.body.setVelocity(0, 0);
     this.cameras.main.fade(500, 0, 0, 0);
     this.time.delayedCall(600, () => this.scene.start(this.data.get('nextScene'), {
-        score: this.score, lives: this.lives, savedCount: this.savedCount }));
+        score: this.score, lives: this.lives, savedCount: 0, totalSaved: this.totalSaved }));
 }
 
 function showFloatingText(s, x, y, msg, color) {

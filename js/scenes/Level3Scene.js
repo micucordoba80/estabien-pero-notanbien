@@ -4,7 +4,8 @@ class Level3Scene extends Phaser.Scene {
     init(data) {
         this.data.set('score', data.score || 0);
         this.data.set('lives', data.lives || GAME.START_LIVES);
-        this.data.set('savedCount', data.savedCount || 0);
+        this.data.set('savedCount', 0);
+        this.data.set('totalSaved', data.totalSaved || 0);
         this.data.set('nextScene', 'Victory');
     }
 
