@@ -24,7 +24,7 @@ class Level1Scene extends Phaser.Scene {
         [{x:150,y:380},{x:400,y:330},{x:650,y:380}].forEach(p => {
             const n = this.npcs.create(p.x, p.y, 'npc');
             n.setData('saved', false).setData('eaten', false);
-            n.setCollideWorldBounds(true); n.body.setDrag(500);
+            n.setCollideWorldBounds(true); n.body.setBounce(1); n.body.setDrag(500);
         });
 
         this.phaseText.setText('🏃 Meté a las 3 personas en las jaulas! ⏱️' + LV.woodlands.timer + 's');

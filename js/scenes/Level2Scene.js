@@ -25,7 +25,7 @@ class Level2Scene extends Phaser.Scene {
         [{x:80,y:450},{x:250,y:250},{x:400,y:350},{x:550,y:250},{x:720,y:450}].forEach(p => {
             const n = this.npcs.create(p.x, p.y, 'npc');
             n.setData('saved', false).setData('eaten', false);
-            n.setCollideWorldBounds(true); n.body.setDrag(500);
+            n.setCollideWorldBounds(true); n.body.setBounce(1); n.body.setDrag(500);
         });
 
         this.phaseText.setText('🏃 Meté a las 5 personas en las jaulas! ⏱️' + LV.forest.timer + 's');

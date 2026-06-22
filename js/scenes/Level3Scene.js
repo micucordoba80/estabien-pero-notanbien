@@ -25,7 +25,7 @@ class Level3Scene extends Phaser.Scene {
         [{x:100,y:300},{x:200,y:200},{x:350,y:450},{x:500,y:250},{x:650,y:450},{x:700,y:300}].forEach(p => {
             const n = this.npcs.create(p.x, p.y, 'npc');
             n.setData('saved', false).setData('eaten', false);
-            n.setCollideWorldBounds(true); n.body.setDrag(500);
+            n.setCollideWorldBounds(true); n.body.setBounce(1); n.body.setDrag(500);
         });
 
         this.phaseText.setText('🏃 Nivel final! Meté a las 6 personas! ⏱️' + LV.mountain.timer + 's');
